@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.animation{
+    width: 100%;
+    height: 100vh;
+    padding: 300px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left, blue, orangered, yellow);
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate;
+}
+#app{
+    
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#app h2,input,button{
+    margin: 10px 0;
+}
+#app input{
+    padding: 4px;
+    font-size: 14px;
+}
+.btn{
+    background-color: #0d275a;
+    color: white;
+    border:none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 4px;
+    transition: .3s;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #051f52;
+    transform: scale(1.1);
+}
+#app ul{
+    list-style: none;
+    padding: 10px 0;
+   
+}
+#app ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px;
+}
+#app ul li a{
+    color: black;
+    text-decoration: none;
+    padding: 0px 50px 0px 50px;
+    font-size: 16px;
+    position: relative;
+}
+a::after{
+    content: " ";
+    width: 0%;
+    height: 3px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+a:hover::after{
+    width: 100%;
+}
+@keyframes degrade-animado{
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+}
